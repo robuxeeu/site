@@ -1,0 +1,236 @@
+:root {
+    --main-color: #e8221a;
+    --secondary-color: #434446;
+    --background-color: #f8f8f8;
+    --font-family: "Poppins", sans-serif;
+    --transition-duration: 0.5s;
+    --transition-ease: ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.container {
+    padding: 15px;
+    border-radius: 10px;
+    color: var(--secondary-color);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: opacity var(--transition-duration) var(--transition-ease), transform var(--transition-duration) var(--transition-ease);
+    position: absolute;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.logo {
+    width: 75%;
+}
+
+header h2 {
+    font-weight: 500;
+}
+
+.loading-step {
+    font-size: 18px;
+}
+
+.highlight {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.currency-icon {
+    height: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.fa-arrow-right {
+    margin-left: 10px;
+}
+
+.step {
+    margin-bottom: 20px;
+    animation: fadeInUp 1s var(--transition-ease);
+    font-size: 17px;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    display: block;
+    /* Alterado de flex para block */
+    margin-top: 10px;
+    background: #cecece;
+    font-weight: 500;
+    outline-color: var(--main-color);
+    border-radius: 16px;
+    text-align: center;
+    border: none;
+    height: 47px;
+    font-size: 16px;
+    color: var(--secondary-color);
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--main-color);
+    margin-top: 8px;
+    color: #fff;
+    border: 1px solid #ffffff87;
+    border-radius: 16px;
+    font-size: 1.15rem;
+    height: 47px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s var(--transition-ease), transform 0.3s var(--transition-ease);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+.verify-link {
+    color: var(--main-color);
+}
+
+.error-message {
+    color: var(--main-color);
+    font-size: 17px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+hr {
+    border: 1px solid #cecece;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #cecece;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: width 1s ease-in-out;
+}
+
+.loader {
+    border: 6px solid #cecece;
+    border-top: 6px solid var(--main-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 30px auto 20px auto;
+    animation: spin 1.5s linear infinite;
+}
+
+.loading-dots::after {
+    content: '...';
+    animation: loading-animation 1s infinite;
+}
+
+@keyframes loading-animation {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    .logo {
+        width: 75%;
+    }
+
+    .button {
+        font-size: 1rem;
+    }
+
+    .step {
+        font-size: 15px;
+    }
+}
