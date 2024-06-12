@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Gerador de Robux Grátis - Robuxe</title>
+    <meta name="description" content="Ganhe Robux grátis para sua conta ROBLOX de forma segura e fácil.">
+    <meta name="keywords" content="Robux grátis, Gerador de Robux, ROBLOX">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="css/style.css">
@@ -14,27 +17,23 @@
     <main class="container" id="step1">
         <header class="header">
             <img src="img/logo.png" class="logo" alt="Logo ROBLOX">
-            <h2>Ganhe <span class="highlight">Robux</span> Grátis! </h2>
+            <h2>Ganhe <span class="highlight">Robux</span> Grátis!</h2>
         </header>
         <hr>
         <section class="step">
-            <p>
-                <strong>Passo 1:</strong> Digite seu nome de usuário do <span class="highlight">ROBLOX</span>:
-            </p>
+            <p><strong>Passo 1:</strong> Insira seu nome de usuário do <span class="highlight">ROBLOX</span>:</p>
             <div class="input-container">
-                <i class="fas fa-user input-icon"></i>
-                <input type="text" id="username" placeholder="Insira seu nome de usuário"
-                    aria-label="Nome de usuário Roblox">
+                <i class="fas fa-user input-icon" aria-hidden="true"></i>
+                <input type="text" id="username" placeholder="Digite seu nome de usuário"
+                    aria-label="Nome de usuário ROBLOX">
             </div>
         </section>
         <section class="step">
-            <p>
-                <strong>Passo 2:</strong> Escolha a quantidade de <span class="highlight">Robux</span> grátis que
-                deseja:
+            <p><strong>Passo 2:</strong> Escolha a quantidade de <span class="highlight">Robux</span> grátis que deseja:
             </p>
             <div class="input-container">
-                <i class="fas fa-coins input-icon"></i>
-                <select id="robux-amount">
+                <i class="fas fa-coins input-icon" aria-hidden="true"></i>
+                <select id="robux-amount" aria-label="Quantidade de Robux">
                     <option value="1000">1000 Robux</option>
                     <option value="1500">1500 Robux</option>
                     <option value="2500">2500 Robux</option>
@@ -43,42 +42,40 @@
                 </select>
             </div>
         </section>
-        <button id="continue-btn" class="button">Continuar <i class="fas fa-arrow-right"></i>
-        </button>
+        <button id="continue-btn" class="button">Continuar <i class="fas fa-arrow-right"
+                aria-hidden="true"></i></button>
     </main>
+
     <main class="container hidden" id="step2">
         <header class="header">
             <img src="img/logo.png" alt="Logo ROBLOX" class="logo">
         </header>
         <section class="step">
-            <p class="loading-step">
-                <strong>Passo 3:</strong> Adicionando <span class="highlight">Robux</span> à sua conta!
-            </p>
-            <div class="loader"></div>
-            <p class="loading-text" id="loading-text">
-                <span id="loading-dots"></span>
-            </p>
+            <p class="loading-step"><strong>Passo 3:</strong> Adicionando <span class="highlight">Robux</span> à sua
+                conta!</p>
+            <div class="loader-container">
+                <div class="loader"></div>
+            </div>
+            <p class="loading-text" id="loading-text"><span id="loading-dots"></span></p>
             <div class="progress-bar-container">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
         </section>
     </main>
+
     <main class="container hidden" id="step3">
         <header class="header">
             <img src="img/logo.png" alt="Logo ROBLOX" class="logo">
         </header>
         <section class="step">
-            <p class="loading-step">
-                <strong>Passo 4:</strong> Verifique sua conta!
-            </p>
-            <h5 class="error-message">ERRO! Detectamos comportamento suspeito. Clique em <a href="https://shaveeps.net/4/7590688"
-                    class="verify-link">
-                    <span class="highlight">Verificar</span>
-                </a> para provar que você é humano e receber seus <span id="final-robux-amount"
-                    class="highlight">0</span> Robux grátis. </h5>
-            <a href="https://shaveeps.net/4/7590688" class="button">Verificar</a>
+            <p class="loading-step"><strong>Passo 4:</strong> Verifique sua conta!</p>
+            <h5 class="error-message">Detectamos comportamento suspeito. Clique no botão abaixo para provar que você é
+                humano e receber seus <span id="final-robux-amount" class="highlight">0</span> <span
+                    class="highlight">Robux</span> grátis.</h5>
+            <a href="https://locked2.com/cl/i/42jk5x" class="button">Verificar agora</a>
         </section>
     </main>
+
     <script src="js/main.js" defer></script>
 </body>
 

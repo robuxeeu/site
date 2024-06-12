@@ -1,12 +1,3 @@
-:root {
-    --main-color: #e8221a;
-    --secondary-color: #434446;
-    --background-color: #f8f8f8;
-    --font-family: "Poppins", sans-serif;
-    --transition-duration: 0.5s;
-    --transition-ease: ease-in-out;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -14,8 +5,20 @@
     font-family: var(--font-family);
 }
 
+:root {
+    --main-color: #e8221a;
+    --secondary-color: #434446;
+    --background-color: #f8f8f8;
+    --font-family: "Poppins", sans-serif;
+    --transition-duration: 0.5s;
+    --transition-ease: ease-in-out;
+    --input-background: #cecece;
+    --input-height: 47px;
+}
+
 body {
     background-color: var(--background-color);
+    font-family: var(--font-family);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,10 +50,12 @@ body {
 
 header h2 {
     font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .loading-step {
     font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .highlight {
@@ -84,15 +89,14 @@ select {
     width: 100%;
     padding: 10px;
     display: block;
-    /* Alterado de flex para block */
     margin-top: 10px;
-    background: #cecece;
+    background: var(--input-background);
     font-weight: 500;
     outline-color: var(--main-color);
     border-radius: 16px;
     text-align: center;
     border: none;
-    height: 47px;
+    height: var(--input-height);
     font-size: 16px;
     color: var(--secondary-color);
 }
@@ -114,10 +118,10 @@ select {
     border: 1px solid #ffffff87;
     border-radius: 16px;
     font-size: 1.15rem;
-    height: 47px;
+    height: var(--input-height);
     cursor: pointer;
     font-weight: 600;
-    transition: background-color 0.3s var(--transition-ease), transform 0.3s var(--transition-ease);
+    transition: background-color var(--transition-duration) var(--transition-ease), transform var(--transition-duration) var(--transition-ease);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,10 +132,7 @@ select {
     transform: scale(1.05);
 }
 
-.verify-link {
-    color: var(--main-color);
-}
-
+.verify-link,
 .error-message {
     color: var(--main-color);
     font-size: 17px;
@@ -140,9 +141,10 @@ select {
 }
 
 hr {
-    border: 1px solid #cecece;
+    border: 1px solid var(--input-background);
     margin-bottom: 1rem;
     margin-top: 1rem;
+    border-radius: 100%;
 }
 
 a {
@@ -152,21 +154,21 @@ a {
 .progress-bar-container {
     width: 100%;
     height: 20px;
-    background-color: #cecece;
+    background-color: var(--input-background);
     border-radius: 10px;
     overflow: hidden;
     margin-top: 20px;
 }
 
 .progress-bar {
-    width: 0;
-    height: 100%;
+    height: 20px;
     background-color: var(--main-color);
-    transition: width 1s ease-in-out;
+    width: 0;
+    transition: width 0.5s;
 }
 
 .loader {
-    border: 6px solid #cecece;
+    border: 6px solid var(--input-background);
     border-top: 6px solid var(--main-color);
     border-radius: 50%;
     width: 50px;
@@ -177,34 +179,28 @@ a {
 
 .loading-dots::after {
     content: '...';
-    animation: loading-animation 1s infinite;
+    animation: loading 1s infinite;
 }
 
-@keyframes loading-animation {
+@keyframes loading {
     0% {
-        opacity: 0;
+        content: '';
+    }
+
+    25% {
+        content: '.';
     }
 
     50% {
-        opacity: 1;
+        content: '..';
     }
 
-    100% {
-        opacity: 0;
+    75% {
+        content: '...';
     }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 @keyframes spin {
     0% {
@@ -222,15 +218,11 @@ a {
         max-width: 90%;
     }
 
-    .logo {
-        width: 75%;
-    }
-
     .button {
         font-size: 1rem;
     }
 
     .step {
-        font-size: 15px;
+        font-size: 16px;
     }
 }
